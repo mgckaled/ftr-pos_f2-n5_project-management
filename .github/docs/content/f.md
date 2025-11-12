@@ -2,6 +2,20 @@
 
 # Ferramentas e Tecnologias para Gerenciamento de Projetos
 
+## Resumo Executivo
+
+Este documento apresenta análise abrangente do ecossistema de ferramentas e tecnologias para gerenciamento de projetos de software, explorando desde plataformas robustas de planejamento tradicional (Microsoft Project com Earned Value Management, gestão sofisticada de recursos e análise de caminho crítico) até soluções modernas especializadas em metodologias ágeis (Jira, Azure DevOps, GitHub Projects) e ferramentas de colaboração flexível (Asana, Trello, Monday.com). O conteúdo examina cinco categorias principais de ferramentas - planejamento tradicional, gestão ágil, dashboards analíticos, automação e integração - demonstrando como cada categoria resolve problemas específicos e oferece trade-offs distintos entre complexidade, flexibilidade, custo e curva de aprendizado. São exploradas mais de 15 ferramentas consolidadas no mercado, com análise detalhada de características fundamentais, casos de uso ideais, limitações críticas e estratégias de implementação bem-sucedida.
+
+As ferramentas de planejamento tradicional (Microsoft Project, Asana, Monday.com) são apresentadas como soluções para projetos que requerem coordenação precisa de centenas de tarefas interdependentes, gestão rigorosa de recursos compartilhados e governança formal com rastreamento detalhado de escopo, cronograma e custos. Microsoft Project destaca-se em ambientes corporativos com contratos de escopo fechado e necessidades de compliance, oferecendo análise de valor agregado (CPI, SPI, EAC) e integração profunda com ecossistema Microsoft (Power BI, SharePoint, Teams), mas apresenta curva de aprendizado acentuada e overhead significativo de atualização que pode frustrar equipes ágeis. Asana equilibra estrutura e flexibilidade através de múltiplas visualizações (Lista, Board Kanban, Timeline Gantt, Workload, Dashboard), automações de fluxo de trabalho que eliminam tarefas repetitivas e integrações com mais de 100 ferramentas complementares, posicionando-se como escolha natural para equipes de produto digital multidisciplinares.
+
+As ferramentas ágeis especializadas (Jira, Azure DevOps, Trello) são exploradas com profundidade, demonstrando como cada uma suporta metodologias específicas. Jira domina mercado de desenvolvimento de software com suporte nativo a Scrum (sprints, backlog grooming, burndown charts, velocity tracking) e Kanban (WIP limits, cumulative flow diagrams), workflows altamente customizáveis que podem modelar processos complexos de aprovação, e ecossistema de 3.000+ apps no Atlassian Marketplace cobrindo desde automações avançadas até integrações profundas com ferramentas de teste, deploy e monitoramento. Azure DevOps oferece plataforma all-in-one integrando gestão de trabalho (Boards), controle de versão (Repos), CI/CD (Pipelines), gerenciamento de artefatos e testes, tornando-se escolha estratégica para organizações Microsoft-centric ou que priorizam consolidação de ferramentas. Trello simplifica drasticamente através de boards Kanban visuais e intuitivos, democratizando gestão de projetos para equipes não técnicas, mas atinge limitações em escala (organizações com 50+ desenvolvedores) e complexidade (projetos com múltiplas dependências cross-team).
+
+Dashboards e ferramentas analíticas (Grafana, Datadog, Tableau) transformam dados brutos de múltiplas fontes em insights acionáveis através de visualizações em tempo real de métricas DORA (deployment frequency, lead time for changes, mean time to recovery, change failure rate que diferenciam elite performers), health scores de projetos (budget burn rate, sprint velocity trends, technical debt acumulado), identificação visual de bottlenecks (análise de cumulative flow diagrams revelando gargalos em code review ou testes) e alertas proativos configuráveis. Grafana destaca-se para monitoramento técnico integrando-se nativamente com Prometheus, InfluxDB e Elasticsearch, enquanto Tableau fornece capacidades analíticas enterprise com suporte a dezenas de fontes de dados, modelagem sofisticada e compartilhamento seguro de dashboards executivos.
+
+**Para quem é este documento**: Desenvolvedores que desejam dominar ferramentas além de IDEs e git, líderes técnicos responsáveis por selecionar stack de gestão para seus times, gerentes de projeto buscando otimizar ferramental existente, CTOs definindo estratégia de ferramentas em nível organizacional, e profissionais que avaliam transição entre ferramentas ou consolidação de ecossistemas fragmentados.
+
+**Principais resultados esperados**: Capacidade de avaliar ferramentas baseado em critérios objetivos (não apenas popularidade ou preferência pessoal), habilidade de construir business case comparando custos (licenças, treinamento, migração, manutenção) versus benefícios quantificáveis (redução de overhead administrativo, aumento de visibilidade, aceleração de ciclos), expertise em implementar adoção bem-sucedida através de champions internos, treinamento estruturado e iteração incremental de configuração, e domínio de integrações que criam ecossistemas coesos onde informação flui automaticamente entre ferramentas eliminando silos e trabalho manual duplicado.
+
 ## Introdução
 
 A escolha adequada de ferramentas de gerenciamento de projetos representa um fator crítico para o sucesso de iniciativas tecnológicas. Em um cenário onde equipes de desenvolvimento são frequentemente distribuídas geograficamente, onde a velocidade de entrega é imperativa competitiva e onde a complexidade técnica dos projetos aumenta constantemente, as ferramentas certas deixaram de ser luxo para se tornarem necessidade estratégica.
@@ -1682,5 +1696,408 @@ Profissionais bem-sucedidos não simplesmente escolhem ferramenta e a usam inalt
 Este módulo forneceu fundação sólida para navegar o complexo landscape de ferramentas disponíveis. A aplicação prática deste conhecimento - experimentando, medindo, iterando - solidificará expertise e permitirá construir stack tecnológico de gestão de projetos que verdadeiramente habilita equipes a entregarem seu melhor trabalho.
 
 ---
+
+## Apêndice A: Matriz Comparativa de Ferramentas
+
+### Comparação por Categorias-Chave
+
+| Ferramenta | Categoria | Curva Aprendizado | Custo Mensal (por usuário) | Melhor Para | Integr ações | Suporte Ágil |
+|------------|-----------|-------------------|----------------------------|-------------|--------------|--------------|
+| **Microsoft Project** | Planejamento Tradicional | Alta | $30-$55 | Projetos complexos, EVM, governança formal | Microsoft 365 | Limitado |
+| **Asana** | Híbrido | Média | $0-$25 | Equipes produto digital, trabalho multidisciplinar | 100+ apps | Bom |
+| **Monday.com** | Híbrido | Baixa-Média | $8-$16 | Processos customizados, automação visual | 40+ apps | Moderado |
+| **Jira** | Ágil Especializado | Média-Alta | $7.75-$15.25 | Desenvolvimento software, Scrum/Kanban | 3000+ apps | Excelente |
+| **Azure DevOps** | Ágil + DevOps | Média | $6-$52 | Org Microsoft, DevOps integrado | Azure, Microsoft | Excelente |
+| **Trello** | Ágil Simples | Baixa | $0-$12.50 | Pequenas equipes, Kanban simples | Power-Ups | Básico |
+| **GitHub Projects** | Ágil Dev-First | Baixa | $0 (GitHub) | Times usando GitHub, workflow code-first | GitHub native | Bom |
+| **ClickUp** | All-in-One | Média | $0-$19 | Consolidação ferramentas, customização extrema | 1000+ apps | Excelente |
+| **Notion** | Knowledge + PM | Baixa-Média | $0-$15 | Documentação + projetos, wikis colaborativos | 50+ apps | Básico |
+| **Grafana** | Dashboards | Média-Alta | $0-$299 | Monitoramento técnico, métricas tempo real | Prometheus, InfluxDB | N/A |
+| **Tableau** | Analytics Enterprise | Alta | $15-$70 | Análise avançada, dashboards executivos | 100+ fontes | N/A |
+
+### Análise de TCO (Total Cost of Ownership) - 5 Anos para Time de 20 Pessoas
+
+| Componente | Jira | Azure DevOps | Asana | Microsoft Project | Trello |
+|------------|------|--------------|-------|-------------------|--------|
+| **Licenças (5 anos)** | $36.600 | $14.400 | $30.000 | $33.000 | $15.000 |
+| **Treinamento inicial** | $5.000 | $4.000 | $2.000 | $8.000 | $1.000 |
+| **Migração de dados** | $8.000 | $10.000 | $4.000 | $12.000 | $2.000 |
+| **Customização/Config** | $10.000 | $6.000 | $3.000 | $15.000 | $1.500 |
+| **Manutenção anual** | $3.000/ano = $15.000 | $2.000/ano = $10.000 | $1.500/ano = $7.500 | $4.000/ano = $20.000 | $500/ano = $2.500 |
+| **Integrações/Apps** | $5.000 | $3.000 | $4.000 | $6.000 | $3.000 |
+| **Suporte premium** | $10.000 | Incluído | $8.000 | Incluído | $5.000 |
+| **TOTAL (5 anos)** | **$89.600** | **$47.400** | **$58.500** | **$94.000** | **$30.000** |
+| **TCO mensal/usuário** | **$7.47** | **$3.95** | **$4.88** | **$7.83** | **$2.50** |
+
+**Observações**:
+- Custos variam significativamente baseado em negociações enterprise, número de usuários e features utilizadas
+- TCO real inclui custos ocultos: tempo de equipe em administração, retrabalho por má configuração, produtividade perdida durante adoção
+- Ferramentas mais baratas inicialmente podem ter TCO maior se requerem integrações complexas ou customizações extensivas
+
+### Scorecard de Decisão (Framework para Seleção)
+
+Use este scorecard atribuindo peso (1-5) a cada critério conforme importância para seu contexto, depois pontue cada ferramenta (1-10):
+
+| Critério | Peso | Jira | Azure DevOps | Asana | Trello | Sua Escolha |
+|----------|------|------|--------------|-------|--------|-------------|
+| **Suporte a metodologia ágil** | ___ | 10 | 10 | 7 | 6 | ___ |
+| **Facilidade de uso/adoção** | ___ | 6 | 7 | 9 | 10 | ___ |
+| **Integrações com stack existente** | ___ | 9 | 8 (Microsoft) | 8 | 7 | ___ |
+| **Escalabilidade (50+ users)** | ___ | 10 | 10 | 8 | 5 | ___ |
+| **Custo-benefício** | ___ | 7 | 9 | 7 | 9 | ___ |
+| **Reporting/Analytics** | ___ | 8 | 9 | 7 | 4 | ___ |
+| **Customização de workflows** | ___ | 10 | 8 | 6 | 5 | ___ |
+| **Suporte e documentação** | ___ | 9 | 8 | 8 | 7 | ___ |
+| **Performance/confiabilidade** | ___ | 9 | 9 | 9 | 8 | ___ |
+| **Roadmap de produto** | ___ | 9 | 8 | 9 | 6 | ___ |
+| **TOTAL PONDERADO** | | ___ | ___ | ___ | ___ | ___ |
+
+**Cálculo**: Multiplique peso por pontuação de cada ferramenta, some totais. Ferramenta com maior pontuação total é melhor fit para seu contexto específico.
+
+---
+
+## Apêndice B: Guias de Implementação
+
+### Checklist: Implementando Nova Ferramenta de Gestão de Projetos
+
+**Fase 1: Planejamento e Preparação (2-4 semanas)**
+
+- [ ] **Definir objetivos claros e mensuráveis**
+  - [ ] Documentar pain points atuais (ex: "40% do tempo gasto em status meetings")
+  - [ ] Estabelecer métricas de sucesso (ex: "Reduzir overhead administrativo em 30%")
+  - [ ] Alinhar expectativas com stakeholders (dev team, product, executives)
+
+- [ ] **Avaliar e selecionar ferramenta**
+  - [ ] Listar requisitos must-have vs nice-to-have
+  - [ ] Testar top 3 candidatos com grupo piloto (1-2 semanas de trial)
+  - [ ] Avaliar TCO de 3-5 anos, não apenas custo de licença inicial
+  - [ ] Verificar integração com stack existente (GitHub, Slack, CI/CD)
+
+- [ ] **Planejar migração de dados**
+  - [ ] Auditar dados atuais (quantos projetos, tasks, histórico a migrar?)
+  - [ ] Decidir o que migrar vs arquivar (não migrar tudo = fresh start)
+  - [ ] Mapear campos customizados antigos para novos
+  - [ ] Testar migração em ambiente sandbox primeiro
+
+- [ ] **Formar equipe de implementação**
+  - [ ] Designar project lead (50% dedicação por 2 meses)
+  - [ ] Selecionar champions por equipe (evangelizadores internos)
+  - [ ] Engajar admin de TI para integrações e SSO
+  - [ ] Definir RACI para decisões (quem aprova workflows, quem configura campos)
+
+**Fase 2: Configuração Inicial (1-2 semanas)**
+
+- [ ] **Setup básico de organização**
+  - [ ] Criar estrutura de workspaces/projetos/times
+  - [ ] Configurar permissões e controle de acesso
+  - [ ] Implementar SSO se disponível (reduz fricção de login)
+  - [ ] Personalizar branding (logo, cores) para ownership
+
+- [ ] **Configurar workflows essenciais**
+  - [ ] Começar SIMPLES: estados básicos (To Do, In Progress, Done)
+  - [ ] Evitar tentação de replicar 100% do processo antigo
+  - [ ] Documentar significado de cada estado/coluna
+  - [ ] Definir Definition of Done para cada tipo de item
+
+- [ ] **Configurar campos e taxonomia**
+  - [ ] Tipos de issues (Epic, Story, Task, Bug)
+  - [ ] Prioridades (P0-P3 ou High/Medium/Low)
+  - [ ] Labels/Tags estratégicos (não criar 50 tags no dia 1)
+  - [ ] Estimativas (Story Points, T-Shirt Sizes, horas?)
+
+- [ ] **Implementar integrações críticas**
+  - [ ] Controle de versão (GitHub/GitLab/Bitbucket)
+  - [ ] Comunicação (Slack/Teams - notificações inteligentes, não spam)
+  - [ ] CI/CD (integração com pipelines para visibilidade)
+  - [ ] Testar fluxo end-to-end: criar task → commit → PR → deploy → done
+
+**Fase 3: Piloto com Grupo Selecionado (3-4 semanas)**
+
+- [ ] **Selecionar time piloto apropriado**
+  - [ ] Escolher time receptivo a mudança (não o mais cético!)
+  - [ ] Tamanho ideal: 5-10 pessoas
+  - [ ] Time com projeto ativo (não time em manutenção)
+  - [ ] Mix de seniority (sênior + júnior)
+
+- [ ] **Treinamento hands-on**
+  - [ ] Sessão de onboarding de 2 horas (não apenas slides - trabalhar na ferramenta!)
+  - [ ] Documentação básica: "Como criar task", "Como mover card", "Como linkar PR"
+  - [ ] Office hours diárias por 1 semana (30min para dúvidas)
+  - [ ] Vídeos curtos (2-3 min) para workflows comuns
+
+- [ ] **Executar sprint/ciclo completo**
+  - [ ] Planning: criar tasks na nova ferramenta
+  - [ ] Desenvolvimento: atualizar status, linkar commits
+  - [ ] Review: demonstrar usando board
+  - [ ] Retrospectiva: coletar feedback sobre ferramenta
+
+- [ ] **Coletar feedback estruturado**
+  - [ ] Survey curto semanal (NPS + 2-3 perguntas abertas)
+  - [ ] Identificar blockers críticos vs nice-to-haves
+  - [ ] Ajustar configuração baseado em feedback
+  - [ ] Celebrar quick wins ("Olha, diminuímos tempo de standup em 50%!")
+
+**Fase 4: Rollout Organizacional (4-8 semanas)**
+
+- [ ] **Comunicação proativa**
+  - [ ] Anunciar rollout com 2 semanas antecedência
+  - [ ] Explicar "porquê" da mudança (pain points → benefícios)
+  - [ ] Compartilhar sucessos do piloto (métricas, testimonials)
+  - [ ] Estabelecer timeline claro e cutover date
+
+- [ ] **Treinamento em ondas**
+  - [ ] Treinar time por time (não todos de uma vez)
+  - [ ] Champions do piloto treinam seus peers
+  - [ ] Disponibilizar treinamento assíncrono (vídeos, docs)
+  - [ ] Criar "cheat sheets" com workflows comuns
+
+- [ ] **Suporte intensivo inicial**
+  - [ ] Help desk dedicado (Slack channel #tooling-help)
+  - [ ] SLA de resposta: <2h para blockers, <1 dia para dúvidas
+  - [ ] FAQ vivo baseado em perguntas recorrentes
+  - [ ] Troubleshooting de integrações que quebram
+
+- [ ] **Migração faseada**
+  - [ ] Abordagem 1: Big bang (todos migram mesmo dia) - rápido mas arriscado
+  - [ ] Abordagem 2: Faseado (time por time ao longo de semanas) - mais seguro
+  - [ ] Durante transição: aceitar que dados estarão em 2 lugares temporariamente
+  - [ ] Definir data de "congelamento" do sistema antigo
+
+**Fase 5: Otimização Contínua (Ongoing)**
+
+- [ ] **Medir adoção e valor**
+  - [ ] Métricas de adoção: % de tasks criadas na nova ferramenta, % de users ativos semanalmente
+  - [ ] Métricas de valor: Tempo economizado em reuniões, visibilidade aumentada (survey), velocity de entrega
+  - [ ] Monitorar métricas mensalmente por 6 meses
+  - [ ] Ajustar baseado em dados, não opiniões
+
+- [ ] **Iterar configuração**
+  - [ ] Revisar workflows trimestralmente - ainda fazem sentido?
+  - [ ] Adicionar automações para eliminar toil
+  - [ ] Simplificar onde possível (remover campos não usados)
+  - [ ] Explorar features avançadas gradualmente
+
+- [ ] **Comunidade interna de prática**
+  - [ ] Monthly "power user" meetup (compartilhar tips & tricks)
+  - [ ] Reconhecer champions que ajudam outros
+  - [ ] Criar biblioteca de templates reutilizáveis
+  - [ ] Manter documentação atualizada (ownership claro)
+
+- [ ] **Preparar para próxima ferramenta**
+  - [ ] Lição aprendida: implementação é projeto, não evento
+  - [ ] Documentar o que funcionou/não funcionou para próxima vez
+  - [ ] Reavaliar stack anualmente - ferramenta ainda é best fit?
+
+### Guia Rápido: Conectando Jira + GitHub + Slack
+
+**Objetivo**: Automatizar fluxo de trabalho onde commits no GitHub atualizam Jira automaticamente e notificam time no Slack.
+
+**Pré-requisitos**:
+- Jira Cloud ou Server com permissões admin
+- GitHub org/repo com permissões de integração
+- Slack workspace com permissões para adicionar apps
+
+**Passo 1: Conectar Jira ↔ GitHub**
+
+```bash
+# Instalar Jira app no GitHub
+1. Ir para GitHub Marketplace: https://github.com/marketplace/jira-software-github
+2. Clicar "Set up a plan" → Escolher repos para integrar
+3. Autorizar acesso do Jira ao GitHub
+
+# Configurar em Jira
+1. Em Jira: Apps → Manage apps → GitHub
+2. Conectar org do GitHub
+3. Selecionar repositórios específicos
+4. Testar: criar branch com nome "PROJ-123-feature" (PROJ-123 = Jira issue key)
+```
+
+**Convenções de nomenclatura**:
+- Branches: `[ISSUE-KEY]-short-description` (ex: PROJ-123-add-auth)
+- Commits: Incluir `[ISSUE-KEY]` em mensagem (ex: `[PROJ-123] Implement OAuth flow`)
+- PRs: Título ou descrição com issue key
+
+**Passo 2: Configurar Automações Jira**
+
+```yaml
+# Regra de automação: Mover issue para "In Review" quando PR é aberto
+Trigger: GitHub pull request event (opened)
+Condition: Pull request status equals "OPEN"
+Action: Transition issue to "In Review"
+Action: Add comment "PR aberto: {{pullRequest.url}}"
+```
+
+```yaml
+# Regra: Mover issue para "Done" quando PR é merged
+Trigger: GitHub pull request event (merged)
+Action: Transition issue to "Done"
+Action: Add comment "PR merged! Deploy: {{deploymentUrl}}"
+```
+
+**Passo 3: Integrar Slack**
+
+```bash
+# Instalar Jira Cloud for Slack
+1. Em Slack: Apps → Browse App Directory → Jira Cloud
+2. Adicionar ao workspace
+3. Em canal desejado: /jira connect
+4. Autorizar conexão com site Jira
+```
+
+**Configurar notificações inteligentes**:
+```bash
+# Notificar canal quando issues mudam de status
+/jira subscribe filter [filter-ID] "status changed"
+
+# Notificar menções pessoais
+/jira subscribe me
+
+# Criar alertas customizados
+# Exemplo: alertar quando bugs P0 são criados
+1. Criar Jira filter: project = PROJ AND priority = Highest AND type = Bug
+2. Em Slack canal: /jira subscribe filter [ID]
+```
+
+**Passo 4: Testar Fluxo Completo**
+
+```bash
+# 1. Criar Jira issue: PROJ-456 "Implement dark mode"
+# 2. Criar branch GitHub: PROJ-456-dark-mode
+# 3. Fazer commits: git commit -m "[PROJ-456] Add dark theme styles"
+# 4. Abrir PR com "PROJ-456" no título
+# 5. Verificar:
+#    - Jira issue mostra link para PR
+#    - Issue moveu para "In Review" automaticamente
+#    - Slack notificou canal #engineering
+# 6. Mergear PR
+# 7. Verificar:
+#    - Issue moveu para "Done"
+#    - Slack notificou conclusão
+```
+
+---
+
+## Apêndice C: Glossário e Termos Técnicos
+
+### Termos de Ferramentas de Gestão
+
+**Backlog**: Lista priorizada de trabalho a ser feito. Product Backlog contém todas features desejadas; Sprint Backlog contém trabalho comprometido para sprint atual.
+
+**Board**: Representação visual de trabalho, tipicamente com colunas representando estágios (To Do, In Progress, Done). Pode ser físico (sticky notes) ou digital (Jira, Trello).
+
+**Burndown Chart**: Gráfico que mostra trabalho restante (eixo Y) ao longo do tempo (eixo X). Linha descendente indica progresso. Usado em Scrum para visualizar se sprint será completada no prazo.
+
+**Burnup Chart**: Similar ao burndown, mas mostra trabalho completado acumulado ao longo do tempo. Útil para visualizar mudanças de escopo (linha de escopo total também é plotada).
+
+**Cumulative Flow Diagram (CFD)**: Gráfico de áreas empilhadas mostrando quantidade de trabalho em cada estado do workflow ao longo do tempo. Permite identificar gargalos (áreas que crescem) e medir lead time.
+
+**Custom Field**: Campo adicional criado além dos padrões da ferramenta para capturar informação específica do contexto (ex: "Ambiente afetado", "Módulo", "Cliente impactado").
+
+**Dashboard**: Painel visual consolidando múltiplas métricas e visualizações em single view. Pode ser executivo (alto nível) ou operacional (detalhado).
+
+**Epic**: Grande corpo de trabalho que pode ser decomposto em múltiplas user stories. Tipicamente não cabe em uma sprint e pode levar meses para completar.
+
+**Filter (Saved Search)**: Consulta salva que retorna conjunto específico de issues baseado em critérios (ex: "Bugs P1 abertos no projeto X"). Usado para criar views customizadas e alimentar dashboards.
+
+**Gantt Chart**: Gráfico de barras horizontais representando cronograma do projeto. Cada barra é tarefa, comprimento representa duração, posição representa timing. Setas mostram dependências.
+
+**Integration/Connector**: Software que permite comunicação bidirecional entre duas ferramentas, sincronizando dados e triggers ações (ex: Jira-Slack integration notifica canal quando issue muda status).
+
+**Issue**: Unidade genérica de trabalho em ferramenta de tracking. Pode ser story, task, bug, epic dependendo de tipo configurado.
+
+**Kanban Board**: Board com colunas representando estágios de fluxo de trabalho e WIP (Work in Progress) limits para cada coluna. Trabalho flui da esquerda para direita.
+
+**Milestone**: Marco significativo no cronograma representando conclusão de fase importante ou conjunto de entregas. Tipicamente tem data target e não consome duração (momento no tempo, não período).
+
+**Power-Up / Plugin / App**: Extensão que adiciona funcionalidade a ferramenta base. Trello tem Power-Ups, Jira tem apps no Marketplace, Asana tem integrações.
+
+**Project**: Container lógico que agrupa trabalho relacionado. Pode representar produto, iniciativa estratégica, ou equipe dependendo de como organização estrutura.
+
+**Roadmap**: Visualização estratégica de alto nível mostrando temas principais, epics e timing planejado ao longo de trimestres ou meses. Comunica direção sem comprometer detalhes.
+
+**Scrum Board**: Board específico para Scrum com colunas típicas: Backlog, Selected for Development, In Progress, In Review, Done. Resetado a cada sprint.
+
+**Sprint**: Iteração timeboxed (tipicamente 1-4 semanas) onde time Scrum trabalha para completar conjunto comprometido de user stories. Termina com potencialmente shippable increment.
+
+**Story Points**: Unidade abstrata de estimativa representando esforço relativo para completar user story, considerando complexidade, incerteza e quantidade de trabalho. Não é tempo (horas).
+
+**Swimlane**: Divisão horizontal de board agrupando items por critério (ex: por prioridade, por pessoa, por tipo). Permite organização adicional além de colunas verticais.
+
+**Velocity**: Média de story points completados por sprint. Usada para planejamento de capacidade em sprints futuras. Exemplo: time com velocity 35 pode comprometer ~35 pontos próxima sprint.
+
+**Webhook**: Mecanismo onde aplicação envia HTTP request para URL configurada quando evento específico ocorre (ex: quando issue transiciona para "Done", enviar POST para sistema externo).
+
+**Workflow**: Conjunto de estados que issue pode ter e transições permitidas entre eles. Exemplo: Open → In Progress → In Review → Done. Pode ter regras complexas (quem pode transicionar, campos requeridos).
+
+**WIP (Work in Progress) Limit**: Número máximo de items permitidos em determinado estado/coluna. Usado em Kanban para prevenir overload e forçar conclusão antes de iniciar novo trabalho.
+
+### Termos de Análise e Métricas
+
+**Cycle Time**: Tempo que item passa em trabalho ativo (desde "In Progress" até "Done"), excluindo tempo em espera. Métrica de eficiência do processo.
+
+**Lead Time**: Tempo total desde criação do item até conclusão. Do ponto de vista do cliente/solicitante, é tempo de resposta para request.
+
+**Throughput**: Quantidade de items completados em determinado período. Exemplo: 12 user stories completadas neste sprint = throughput de 12.
+
+**SLA (Service Level Agreement)**: Acordo formal definindo tempo máximo de resposta ou resolução para diferentes tipos de work items. Exemplo: Bugs P0 devem ser resolvidos em 4 horas.
+
+**DORA Metrics**: Quatro métricas-chave de DevOps Research and Assessment:
+- **Deployment Frequency**: Frequência de deploys em produção
+- **Lead Time for Changes**: Tempo de commit até deploy em produção
+- **Mean Time to Recovery (MTTR)**: Tempo médio para restaurar serviço após incidente
+- **Change Failure Rate**: Percentual de deploys que causam degradação/rollback
+
+**Health Score**: Métrica composta agregando múltiplos indicadores para representar "saúde" geral de projeto (ex: combinação de velocity, bug rate, code coverage, on-time delivery).
+
+### Termos de Planejamento Tradicional
+
+**Baseline**: Versão aprovada de plano (escopo, cronograma, custo) usada como ponto de referência para medir desvios. Exemplo: cronograma baseline vs cronograma atual mostra variância.
+
+**Critical Path**: Sequência de atividades interdependentes que determina duração mínima do projeto. Qualquer atraso em atividade do caminho crítico atrasa projeto inteiro.
+
+**Earned Value Management (EVM)**: Técnica que integra escopo, cronograma e custo para medir performance objetivamente. Métricas principais:
+- **PV (Planned Value)**: Valor orçado do trabalho planejado
+- **EV (Earned Value)**: Valor orçado do trabalho completado
+- **AC (Actual Cost)**: Custo real incorrido
+- **CPI (Cost Performance Index)**: EV/AC (>1 = sob orçamento)
+- **SPI (Schedule Performance Index)**: EV/PV (>1 = adiantado)
+
+**Resource Leveling**: Técnica de ajustar cronograma para resolver conflitos de recursos super-alocados, tipicamente atrasando tarefas não-críticas.
+
+**Slack/Float**: Quantidade de tempo que atividade pode atrasar sem impactar data final do projeto (para atividades não no caminho crítico).
+
+### Siglas e Acrônimos
+
+**API**: Application Programming Interface (interface de programação)
+**CFD**: Cumulative Flow Diagram (diagrama de fluxo acumulado)
+**CI/CD**: Continuous Integration/Continuous Deployment (integração/deploy contínuos)
+**CPI**: Cost Performance Index (índice de desempenho de custos)
+**DORA**: DevOps Research and Assessment
+**EV**: Earned Value (valor agregado)
+**EVM**: Earned Value Management (gerenciamento de valor agregado)
+**IDE**: Integrated Development Environment (ambiente de desenvolvimento)
+**JQL**: Jira Query Language (linguagem de consulta do Jira)
+**KPI**: Key Performance Indicator (indicador-chave de desempenho)
+**MTTR**: Mean Time to Recovery (tempo médio de recuperação)
+**OKR**: Objectives and Key Results (objetivos e resultados-chave)
+**PBI**: Product Backlog Item (item do backlog do produto)
+**PM**: Project Management (gerenciamento de projetos)
+**PMO**: Project Management Office (escritório de projetos)
+**PV**: Planned Value (valor planejado)
+**RACI**: Responsible, Accountable, Consulted, Informed
+**REST**: Representational State Transfer (protocolo de API)
+**ROI**: Return on Investment (retorno sobre investimento)
+**SaaS**: Software as a Service (software como serviço)
+**SCM**: Source Code Management (gerenciamento de código fonte)
+**SLA**: Service Level Agreement (acordo de nível de serviço)
+**SPI**: Schedule Performance Index (índice de desempenho de cronograma)
+**SSO**: Single Sign-On (autenticação única)
+**TCO**: Total Cost of Ownership (custo total de propriedade)
+**UI/UX**: User Interface/User Experience (interface/experiência de usuário)
+**WIP**: Work in Progress (trabalho em progresso)
+
+---
+
+> **Nota**: Este glossário cobre termos fundamentais relacionados a ferramentas e tecnologias de gestão de projetos. Para termos adicionais sobre metodologias ágeis, PMBOK e liderança, consulte os glossários dos Blocos B, A e D respectivamente.
 
 _Última atualização: Novembro 2025_

@@ -1,6 +1,6 @@
 <!-- markdownlint-disable -->
 
-# Introdução ao Gerenciamento de Projetos de Software
+# Introdução ao Gerenciamento de Projetos (de Software)
 
 ## Resumo Executivo
 

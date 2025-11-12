@@ -1,6 +1,22 @@
 <!-- markdownlint-disable -->
 
-# Bloco D - Execução e Monitoramento de Projetos
+# Execução e Monitoramento de Projetos
+
+## Resumo Executivo
+
+Este documento apresenta análise abrangente das fases de execução e monitoramento em projetos de desenvolvimento de software, explorando os pilares fundamentais que transformam planejamento em resultados tangíveis: liderança de equipes, gestão estratégica de stakeholders, comunicação eficaz, monitoramento sistemático de progresso, controle rigoroso de mudanças e medição objetiva de desempenho através de indicadores-chave. O conteúdo examina como estes elementos operam de forma integrada para permitir que gestores de projeto naveguem pelas complexidades inerentes ao desenvolvimento de software moderno, equilibrando estrutura com flexibilidade, previsibilidade com adaptabilidade, e controle com autonomia de equipes altamente especializadas.
+
+A liderança em projetos de software é abordada através da Teoria da Liderança Situacional de Hersey-Blanchard, demonstrando como gestores eficazes adaptam seu estilo (direcionar, orientar, apoiar, delegar) conforme o nível de maturidade e competência dos membros da equipe em relação a tarefas específicas. São explorados conceitos de servant leadership aplicados em contextos ágeis, técnicas de motivação baseadas na Teoria da Autodeterminação (autonomia, competência, relacionamento) e frameworks práticos para construção de equipes de alto desempenho. A gestão estratégica de stakeholders utiliza ferramentas consolidadas como Matriz de Poder versus Interesse, Análise de Salience (poder, legitimidade, urgência) e Matriz RACI para identificar, classificar, engajar e gerenciar expectativas de partes interessadas com perfis diversos - desde patrocinadores executivos até desenvolvedores técnicos, usuários finais e reguladores.
+
+A comunicação eficaz é tratada como competência crítica que consome 75-90% do tempo de gestores de projeto, explorando dimensões verbal e escrita, formal e informal, síncrona e assíncrona. São apresentados modelos consolidados como o Processo de Comunicação de Shannon-Weaver (emissor, codificação, canal, ruído, decodificação, receptor, feedback), barreiras comuns à comunicação eficaz (ambiguidade de linguagem técnica, sobrecarga de informação, diferenças culturais em times distribuídos) e estratégias práticas para superá-las. O documento demonstra aplicação de Planos de Comunicação estruturados que definem quem precisa de quais informações, quando, através de quais canais e em qual formato, adaptados a diferentes perfis de stakeholders.
+
+O monitoramento de progresso e controle de mudanças são explorados através de metodologias robustas que combinam práticas tradicionais (Earned Value Management com métricas CPI e SPI, análise de variância) com abordagens ágeis (burndown charts, velocity tracking, cumulative flow diagrams em Kanban). O controle formal de mudanças é apresentado através de processos estruturados de Change Control Board, análise de impacto multi-dimensional (escopo, cronograma, custo, riscos, qualidade) e ferramentas de rastreabilidade como matrizes de rastreamento de requisitos. São abordadas estratégias de gestão de configuração usando Git Flow, versionamento semântico e integração contínua para garantir que mudanças técnicas sejam controladas com mesmo rigor que mudanças de escopo de negócio.
+
+Os indicadores de desempenho e métricas de sucesso são categorizados em múltiplas dimensões: métricas de produto (funcionalidade entregue, defeitos, performance, cobertura de testes), métricas de processo (velocity, lead time, cycle time, deployment frequency), métricas de negócio (ROI, satisfação de usuário NPS, time-to-market) e métricas DORA que caracterizam elite performers em DevOps. O documento explora como Balanced Scorecard adapta-se a projetos de software, alinhando perspectivas financeira, cliente, processos internos e aprendizado/crescimento. São fornecidos dashboards práticos configuráveis em ferramentas como Grafana, Jira, Azure DevOps que transformam dados brutos em insights acionáveis para tomada de decisão rápida e fundamentada.
+
+**Para quem é este documento**: Gerentes de projeto de tecnologia responsáveis por execução e monitoramento, líderes técnicos que assumem responsabilidades de gestão, Scrum Masters e Product Owners que precisam acompanhar progresso em ambientes ágeis, PMOs que estabelecem padrões de monitoramento organizacional, e desenvolvedores que desejam compreender como seu trabalho é medido e comunicado a stakeholders.
+
+**Principais resultados esperados**: Capacidade de liderar equipes técnicas com estilos adaptados a contextos específicos, habilidade de gerenciar expectativas de stakeholders diversos através de comunicação estratégica, domínio de técnicas de monitoramento que combinam rigor tradicional com agilidade moderna, competência para controlar mudanças sem engessar processo criativo, e expertise em selecionar, medir e comunicar métricas que realmente importam para sucesso do projeto, evitando vanity metrics que mascaram problemas reais e focando em indicadores que direcionam ações corretivas e melhorias contínuas.
 
 ## Introdução
 
@@ -2657,4 +2673,773 @@ A integração harmoniosa destes elementos—liderança, comunicação, monitora
 Este documento baseia-se em literatura acadêmica e profissional consolidada em gerenciamento de projetos, desenvolvimento de software, liderança e comportamento organizacional. As referências listadas constituem fontes primárias e secundárias que fundamentam os conceitos, frameworks, metodologias e melhores práticas apresentadas. Recomenda-se consulta direta a estas obras para aprofundamento nos tópicos de interesse específico.
 
 Para contextos corporativos e acadêmicos, todas as referências aqui citadas são reconhecidas e respeitadas, proporcionando fundamentação teórica e empírica robusta para a aplicação prática dos conceitos discutidos ao longo deste documento.
+
+---
+
+## Apêndice A: Templates e Frameworks Práticos
+
+### Template de Plano de Comunicação
+
+```markdown
+# Plano de Comunicação do Projeto - [Nome do Projeto]
+
+## Informações do Projeto
+- **Gerente de Projeto**: [Nome]
+- **Duração**: [Data Início] - [Data Término]
+- **Última Atualização**: [Data]
+
+## Stakeholders e Necessidades de Comunicação
+
+| Stakeholder/Grupo | Informação Necessária | Frequência | Canal | Formato | Responsável |
+|-------------------|----------------------|------------|-------|---------|-------------|
+| **Patrocinador Executivo** | Status geral, riscos críticos, decisões estratégicas | Semanal | Email + reunião presencial | Executive dashboard (1 página) | GP |
+| **Product Owner** | Progresso de sprints, backlog, impedimentos | Diário | Slack + Jira | Daily standup + board atualizado | Scrum Master |
+| **Equipe de Desenvolvimento** | Tarefas, prioridades, dependências técnicas | Diário | Slack + GitHub | Daily standup, PRs, Issues | Scrum Master |
+| **Usuários Finais** | Novas features, mudanças de UI/UX, releases | Quinzenal | Email + in-app notifications | Release notes | Product Owner |
+| **Equipe de Suporte** | Bugs conhecidos, workarounds, documentação | Semanal | Confluence + Email | Knowledge base articles | Tech Lead |
+| **Compliance/Auditoria** | Evidências de controles, logs de mudanças | Mensal | Email formal | Relatório de compliance | GP |
+| **Times Dependentes** | APIs, contratos, cronograma de integrações | Semanal | Slack + docs compartilhados | Architecture Decision Records | Arquiteto |
+
+## Reuniões Regulares
+
+### Daily Standup
+- **Participantes**: Dev Team, Scrum Master, PO (opcional)
+- **Frequência**: Diária, 15 minutos
+- **Horário**: 9:30 AM
+- **Local/Ferramenta**: Zoom (link fixo)
+- **Agenda**:
+  - O que fiz ontem?
+  - O que farei hoje?
+  - Impedimentos?
+- **Documentação**: Notas no Jira
+
+### Sprint Review
+- **Participantes**: Dev Team, PO, stakeholders convidados
+- **Frequência**: Final de cada sprint (a cada 2 semanas)
+- **Duração**: 1 hora
+- **Agenda**:
+  - Demo de funcionalidades completadas
+  - Feedback de stakeholders
+  - Atualização de backlog
+- **Documentação**: Gravação + ata no Confluence
+
+### Retrospectiva
+- **Participantes**: Dev Team, Scrum Master
+- **Frequência**: Final de cada sprint
+- **Duração**: 45 minutos
+- **Agenda**:
+  - O que funcionou bem?
+  - O que pode melhorar?
+  - Action items
+- **Documentação**: Action items rastreados no Jira
+
+### Status Meeting Executivo
+- **Participantes**: GP, Patrocinador, Líderes de Área
+- **Frequência**: Semanal
+- **Duração**: 30 minutos
+- **Agenda**:
+  - Status RAG (Red/Amber/Green)
+  - Riscos e issues críticos
+  - Decisões necessárias
+- **Documentação**: Executive summary no PowerPoint
+
+## Comunicações Ad-hoc
+
+### Escalações de Issues
+- **Canal**: Email + telefone para P0/P1
+- **SLA de Resposta**: P0 (imediato), P1 (4h), P2 (1 dia), P3 (3 dias)
+- **Template**: [Link para template de escalação]
+
+### Change Requests
+- **Canal**: Jira ticket + email formal para aprovadores
+- **Processo**: Documentado em [link para processo de mudança]
+- **SLA de Aprovação**: 3 dias úteis
+
+### Relatórios de Incidentes
+- **Canal**: Post-mortem no Confluence + notificação por email
+- **Frequência**: Após cada incidente P0/P1
+- **Template**: [Link para template de post-mortem]
+
+## Métricas de Eficácia de Comunicação
+
+- **Response Rate**: >95% dos emails respondidos em 24h
+- **Meeting Adherence**: <10% de atrasos/cancelamentos
+- **Information Accuracy**: Zero retrabalho por má comunicação (medido em retrospectivas)
+- **Stakeholder Satisfaction**: NPS >40 (medido trimestralmente)
+
+## Glossário de Termos
+
+[Link para glossário de termos técnicos e de projeto]
+
+## Aprovações
+
+- **Gerente de Projeto**: [Nome] - [Data]
+- **Patrocinador**: [Nome] - [Data]
+```
+
+### Template de Registro de Stakeholders
+
+```markdown
+# Registro de Stakeholders - [Nome do Projeto]
+
+## Stakeholder 1: [Nome/Cargo]
+
+### Informações Básicas
+- **Organização**: [Departamento/Empresa]
+- **Contato**: [Email, Telefone]
+- **Papel no Projeto**: [Patrocinador/Usuário Final/Aprovador/etc.]
+
+### Análise de Poder e Interesse
+- **Poder**: ⬜ Baixo  ⬜ Médio  ☑️ Alto
+- **Interesse**: ⬜ Baixo  ☑️ Médio  ⬜ Alto
+- **Classificação**: Gerenciar de Perto
+- **Salience** (Poder + Legitimidade + Urgência): Alta
+
+### Expectativas e Requisitos
+- Espera ROI de 30% em 12 meses
+- Requer dashboard executivo semanal
+- Aprovação necessária para mudanças >10% do orçamento
+
+### Estratégia de Engajamento
+- **Frequência de Comunicação**: Semanal
+- **Canais Preferidos**: Email executivo + reunião presencial
+- **Informações Críticas**: Status financeiro, riscos, decisões estratégicas
+- **Abordagem**: Formal, focada em business value e ROI
+
+### Influência e Relacionamentos
+- **Influencia**: Board de Diretores, CFO
+- **Apoiadores**: CTO, VP de Produto
+- **Opositores**: Head de Operações (resistente a mudanças)
+
+### Riscos Associados
+- **Risco**: Pode cancelar projeto se marcos iniciais não forem atingidos
+- **Mitigação**: Entregar quick wins nos primeiros 3 meses
+
+### Histórico de Interações
+- [2024-01-15] Kickoff meeting - aprovou escopo inicial
+- [2024-02-01] Solicitou mudança no cronograma - aprovada
+- [2024-02-15] Expressou preocupação com custos - mitigado com replanejamento
+
+---
+
+## Stakeholder 2: [Nome/Cargo]
+[Repetir estrutura]
+
+---
+
+## Matriz de Poder vs Interesse
+
+```text
+        Alto Interesse
+              │
+   Manter     │     Gerenciar
+  Informados  │     de Perto
+──────────────┼──────────────  Alto Poder
+              │
+  Monitorar   │     Manter
+              │    Satisfeitos
+        Baixo Interesse
+```
+
+**Gerenciar de Perto**: Stakeholder 1, Stakeholder 5
+**Manter Satisfeitos**: Stakeholder 2, Stakeholder 3
+**Manter Informados**: Stakeholder 4, Stakeholder 7
+**Monitorar**: Stakeholder 6, Stakeholder 8
+
+---
+
+## Matriz RACI do Projeto
+
+| Atividade | GP | PO | Dev Lead | QA Lead | DevOps | Arquiteto |
+|-----------|----|----|----------|---------|--------|-----------|
+| Aprovação de Escopo | C | A | C | I | I | C |
+| Priorização de Backlog | I | A | C | I | I | C |
+| Implementação de Features | I | C | R | C | I | C |
+| Testes de Qualidade | I | C | C | A/R | I | I |
+| Deploy em Produção | A | I | C | C | R | C |
+| Arquitetura Técnica | C | I | C | I | C | A/R |
+
+**Legenda**:
+- **R** (Responsible): Executa a tarefa
+- **A** (Accountable): Responsável final, aprova
+- **C** (Consulted): Consultado, fornece input
+- **I** (Informed): Informado sobre progresso/resultados
+```
+
+### Framework de Análise de Mudanças
+
+```markdown
+# Análise de Impacto de Mudança - CR-[número]
+
+## Informações da Mudança Solicitada
+
+**ID**: CR-[número]
+**Título**: [Título descritivo]
+**Solicitante**: [Nome, Departamento]
+**Data da Solicitação**: [Data]
+**Prioridade**: ⬜ Baixa  ⬜ Média  ☑️ Alta  ⬜ Crítica
+
+## Descrição da Mudança
+
+### Situação Atual (As-Is)
+[Descrever o estado atual do sistema/processo]
+
+### Mudança Proposta (To-Be)
+[Descrever o que será modificado]
+
+### Justificativa de Negócio
+[Por que esta mudança é necessária? Qual problema resolve ou oportunidade captura?]
+
+## Análise de Impacto Multi-Dimensional
+
+### 1. Impacto em Escopo
+- **Funcionalidades Afetadas**: [Lista de módulos/componentes]
+- **Novos Requisitos**: [Requisitos funcionais e não-funcionais adicionados]
+- **Requisitos Removidos**: [Se aplicável]
+- **Complexidade**: ⬜ Baixa  ☑️ Média  ⬜ Alta
+
+**Análise Técnica**:
+```typescript
+// Componentes que precisarão modificação
+- src/services/authentication.ts (refatoração de OAuth flow)
+- src/components/LoginForm.tsx (adicionar UI para 2FA)
+- database/migrations/add_2fa_secrets.sql (novo schema)
+```
+
+### 2. Impacto em Cronograma
+- **Esforço Estimado**: 40 horas (5 dias)
+- **Tarefas Afetadas**:
+  - TASK-123: Atrasará em 3 dias
+  - TASK-125: Precisa ser repriorizada
+- **Caminho Crítico**: ☑️ Impacta  ⬜ Não Impacta
+- **Nova Data de Conclusão**: [Data original] → [Nova data]
+
+**Diagrama de Gantt (Antes/Depois)**:
+[Anexar screenshot ou diagrama]
+
+### 3. Impacto em Custos
+- **Custo Adicional Estimado**: R$ 8.000
+  - Horas de desenvolvimento: R$ 6.000 (40h × R$ 150/h)
+  - Testes adicionais: R$ 1.500
+  - Infraestrutura (serviço 2FA): R$ 500/mês
+- **Impacto no Orçamento Total**: +2.5%
+- **Reserva de Contingência Disponível**: R$ 20.000 (suficiente)
+
+### 4. Impacto em Riscos
+**Novos Riscos Introduzidos**:
+| Risco | Probabilidade | Impacto | Mitigação |
+|-------|---------------|---------|-----------|
+| Usuários resistem a 2FA | Média | Médio | Programa de treinamento, FAQ detalhado |
+| Biblioteca de 2FA tem vulnerabilidades | Baixa | Alto | Usar lib auditada (Google Authenticator) |
+| Aumento de chamadas de suporte | Alta | Baixo | Documentação clara, tour guiado |
+
+### 5. Impacto em Qualidade
+- **Cobertura de Testes**: Necessário adicionar 15 novos testes
+- **Technical Debt**: Leve aumento (configurações adicionais)
+- **Performance**: Latência adicional de ~200ms no login (aceitável)
+- **Segurança**: ☑️ Melhoria significativa  ⬜ Sem mudança  ⬜ Degradação
+
+### 6. Impacto em Stakeholders
+| Stakeholder | Impacto | Nível de Suporte | Ações Necessárias |
+|-------------|---------|------------------|-------------------|
+| Usuários Finais | Alto (mudança no fluxo de login) | Neutro/Resistente | Comunicação prévia, treinamento |
+| Equipe de Suporte | Médio (mais chamadas) | Favorável | Atualizar scripts, treinar |
+| Segurança/Compliance | Alto positivo | Muito favorável | Documentar implementação |
+| Patrocinador | Baixo (dentro de orçamento) | Favorável | Briefing sobre ROI de segurança |
+
+## Dependências e Pré-requisitos
+- [ ] Aprovação do Security Officer (obrigatório para mudanças de autenticação)
+- [ ] Integração com serviço de 2FA (Google Authenticator ou similar)
+- [ ] Documentação de usuário atualizada
+- [ ] Ambiente de staging configurado para testes
+
+## Alternativas Consideradas
+
+### Alternativa 1: Implementar apenas email de confirmação
+- **Prós**: Mais simples, menor resistência de usuários
+- **Contras**: Segurança inferior a 2FA
+- **Custo**: R$ 2.000
+- **Prazo**: 2 dias
+- **Decisão**: Rejeitada (não atende requisitos de compliance)
+
+### Alternativa 2: 2FA opcional (opt-in)
+- **Prós**: Menor resistência inicial
+- **Contras**: Baixa adoção esperada (<20%)
+- **Custo**: Igual a solução proposta
+- **Prazo**: Igual a solução proposta
+- **Decisão**: Considerada para Fase 2
+
+## Recomendação
+
+☑️ **Aprovar**  ⬜ Aprovar com modificações  ⬜ Rejeitar  ⬜ Adiar
+
+**Justificativa**: Mudança alinhada com requisitos de segurança e compliance. Impacto em cronograma e custo é aceitável dentro de reservas de contingência. Riscos são gerenciáveis com mitigações propostas.
+
+**Condições para Aprovação**:
+1. Aprovação formal do Security Officer
+2. Plano de comunicação para usuários aprovado por Marketing
+3. Treinamento da equipe de suporte concluído antes do deploy
+
+## Aprovações
+
+| Nome | Papel | Decisão | Data | Assinatura |
+|------|-------|---------|------|------------|
+| [Nome] | Gerente de Projeto | Aprovar | [Data] | [Assinatura] |
+| [Nome] | Product Owner | Aprovar | [Data] | [Assinatura] |
+| [Nome] | Arquiteto de Segurança | Aprovar | [Data] | [Assinatura] |
+| [Nome] | Patrocinador | Aprovar | [Data] | [Assinatura] |
+
+## Próximos Passos (se aprovado)
+1. [2024-03-01] Criar tasks técnicas no backlog
+2. [2024-03-02] Atualizar documentação de requisitos
+3. [2024-03-05] Iniciar desenvolvimento
+4. [2024-03-12] Code review e testes
+5. [2024-03-15] Deploy em staging
+6. [2024-03-18] UAT com grupo piloto de usuários
+7. [2024-03-22] Deploy em produção
+```
+
+### Dashboard de Monitoramento de Projeto (Grafana/Datadog)
+
+```yaml
+# Exemplo de configuração de Dashboard (JSON para Grafana)
+# Este dashboard monitora saúde geral do projeto de software
+
+dashboard:
+  title: "Project Health Dashboard - [Nome do Projeto]"
+  refresh: "30s"
+  time:
+    from: "now-7d"
+    to: "now"
+
+  panels:
+    - title: "Sprint Progress"
+      type: "stat"
+      metrics:
+        - story_points_completed / story_points_committed * 100
+      thresholds:
+        - value: 80
+          color: "green"
+        - value: 60
+          color: "yellow"
+        - value: 0
+          color: "red"
+
+    - title: "Velocity Trend (Last 6 Sprints)"
+      type: "graph"
+      metrics:
+        - avg(story_points_completed) by sprint
+      target_line: 35  # velocity esperada
+
+    - title: "Burndown Chart (Current Sprint)"
+      type: "graph"
+      metrics:
+        - remaining_story_points by day
+      ideal_line: true  # linha ideal de burndown
+
+    - title: "Defect Trend"
+      type: "graph"
+      metrics:
+        - count(bugs) by (severity, created_date)
+      legend:
+        - Critical
+        - High
+        - Medium
+        - Low
+
+    - title: "Code Quality Metrics"
+      type: "table"
+      columns:
+        - Code Coverage: 82% (target: >80%) ✓
+        - Technical Debt Ratio: 3.2% (target: <5%) ✓
+        - Duplicated Code: 2.1% (target: <3%) ✓
+        - Cyclomatic Complexity: 8.5 (target: <10) ✓
+        - Security Hotspots: 2 (target: 0) ⚠️
+
+    - title: "DORA Metrics"
+      type: "stat_grid"
+      metrics:
+        deployment_frequency:
+          value: "3.2 deploys/day"
+          benchmark: "Elite: >1/day"
+          status: "green"
+        lead_time_for_changes:
+          value: "4.5 hours"
+          benchmark: "Elite: <1 day"
+          status: "green"
+        time_to_restore_service:
+          value: "45 minutes"
+          benchmark: "Elite: <1 hour"
+          status: "green"
+        change_failure_rate:
+          value: "8%"
+          benchmark: "Elite: <15%"
+          status: "green"
+
+    - title: "Budget vs Actual Spend"
+      type: "gauge"
+      metrics:
+        - (actual_cost / budgeted_cost) * 100
+      ranges:
+        - 0-90: "green"     # Under budget
+        - 90-100: "yellow"  # On track
+        - 100-110: "orange" # Slightly over
+        - 110+: "red"       # Significantly over
+      current_value: 87%
+
+    - title: "Schedule Performance Index (SPI)"
+      type: "gauge"
+      metrics:
+        - earned_value / planned_value
+      ranges:
+        - ">1.0": "green"   # Ahead of schedule
+        - "0.95-1.0": "yellow"  # On schedule
+        - "<0.95": "red"    # Behind schedule
+      current_value: 1.08
+
+    - title: "Team Happiness (Last Retro)"
+      type: "smiley_rating"
+      value: 4.2 / 5.0
+      trend: "+0.3 from previous sprint"
+
+    - title: "Top 5 Impediments"
+      type: "list"
+      items:
+        - "[P1] Waiting for API spec from partner team (5 days)"
+        - "[P2] CI pipeline slow (15 min builds)"
+        - "[P2] Staging environment instability"
+        - "[P3] Lack of designer availability"
+        - "[P3] Unclear requirements for Feature X"
+
+    - title: "Risk Heatmap"
+      type: "heatmap"
+      axes:
+        x: "Probability (Low/Medium/High)"
+        y: "Impact (Low/Medium/High)"
+      risks:
+        - { name: "Key developer leaves", prob: "low", impact: "high" }
+        - { name: "Third-party API changes", prob: "medium", impact: "high" }
+        - { name: "Scope creep", prob: "medium", impact: "medium" }
+
+    - title: "Stakeholder Engagement"
+      type: "bar_chart"
+      metrics:
+        - stakeholder_meeting_attendance_rate by stakeholder_type
+      data:
+        Sponsors: 95%
+        Product Owners: 100%
+        End Users: 60%
+        Compliance: 80%
+```
+
+---
+
+## Apêndice B: Checklists Operacionais
+
+### Checklist de Daily Standup Eficaz
+
+**Preparação (antes da reunião)**:
+- [ ] Atualizar status das tarefas no board (Jira/Azure DevOps)
+- [ ] Revisar impedimentos identificados ontem
+- [ ] Identificar tarefas completadas nas últimas 24h
+- [ ] Planejar trabalho para próximas 24h
+
+**Durante a Reunião (15 minutos máximo)**:
+- [ ] Iniciar pontualmente (tolerância máxima: 2 minutos)
+- [ ] Todos de pé (se presencial) ou câmeras ligadas (se remoto)
+- [ ] Cada membro responde:
+  - [ ] O que completei desde ontem?
+  - [ ] O que planejo completar até amanhã?
+  - [ ] Há impedimentos bloqueando meu progresso?
+- [ ] Scrum Master registra impedimentos
+- [ ] Discussões profundas são adiadas ("parking lot")
+- [ ] Terminar dentro do timebox de 15 minutos
+
+**Após a Reunião**:
+- [ ] Scrum Master trabalha na remoção de impedimentos
+- [ ] Conversas detalhadas necessárias agendadas com subset do time
+- [ ] Board atualizado reflete status discutido
+
+**Anti-Patterns a Evitar**:
+- ❌ Transformar em reunião de status report para gerente
+- ❌ Permitir discussões técnicas profundas
+- ❌ Pessoas não preparadas, atualizando board durante a daily
+- ❌ Ultrapassar 15 minutos regularmente
+- ❌ Ausência frequente de membros sem justificativa
+
+### Checklist de Sprint Review
+
+**1 Semana Antes**:
+- [ ] Confirmar presença de stakeholders-chave
+- [ ] Reservar sala/link de videoconferência
+- [ ] Preparar ambiente de demo (staging atualizado)
+
+**2 Dias Antes**:
+- [ ] Validar que todas as stories "Done" atendem Definition of Done
+- [ ] Preparar roteiro de demonstração
+- [ ] Testar ambiente de demo (evitar surpresas técnicas)
+
+**1 Dia Antes**:
+- [ ] Enviar agenda para participantes
+- [ ] Preparar dados de métricas da sprint (velocity, burndown)
+- [ ] Coordenar quem apresentará cada feature
+
+**Durante a Review (1 hora)**:
+- [ ] [5 min] Introdução: relembrar Sprint Goal
+- [ ] [5 min] Apresentar métricas da sprint
+  - Story points comprometidos vs completados
+  - Velocity
+  - Bugs encontrados/corrigidos
+- [ ] [35 min] Demonstração de features completadas
+  - Mostrar software funcionando (não slides!)
+  - Cada feature demonstrada por quem desenvolveu
+  - Solicitar feedback imediato de stakeholders
+- [ ] [10 min] Revisão de backlog
+  - Discutir prioridades para próximas sprints
+  - Adicionar/refinar items baseado em feedback
+- [ ] [5 min] Encerramento e próximos passos
+
+**Após a Review**:
+- [ ] Documentar feedback recebido
+- [ ] Atualizar backlog com novos items ou mudanças de prioridade
+- [ ] Enviar gravação e notas para stakeholders ausentes
+- [ ] Arquivar artefatos da sprint (código, docs, métricas)
+
+**Critérios de Sucesso**:
+- ✅ Stakeholders-chave presentes (>80% de attendance)
+- ✅ Feedback acionável recebido
+- ✅ Demo ocorreu sem problemas técnicos
+- ✅ Backlog atualizado reflete discussões
+- ✅ Satisfação de stakeholders (medida informalmente)
+
+### Checklist de Análise de Earned Value Management (EVM)
+
+**Coleta de Dados (Mensal)**:
+- [ ] **Planned Value (PV)**: Valor orçado do trabalho agendado
+  - Somar orçamento de todas as tarefas que deveriam estar completas até a data
+  - Exemplo: 40% do projeto deveria estar completo = 40% do orçamento = R$ 400.000
+- [ ] **Earned Value (EV)**: Valor orçado do trabalho realmente completado
+  - Somar orçamento de tarefas efetivamente completadas
+  - Exemplo: 35% do projeto realmente completo = R$ 350.000
+- [ ] **Actual Cost (AC)**: Custo real incorrido
+  - Somar todos os gastos efetivos até a data
+  - Exemplo: R$ 380.000 gastos
+
+**Cálculo de Índices**:
+- [ ] **Cost Performance Index (CPI) = EV / AC**
+  - Exemplo: R$ 350.000 / R$ 380.000 = 0.92
+  - Interpretação:
+    - CPI > 1.0: Abaixo do orçamento (good!)
+    - CPI = 1.0: No orçamento
+    - CPI < 1.0: Acima do orçamento (problema!)
+  - **Ação se CPI < 0.95**: Investigar causas, implementar ações corretivas
+
+- [ ] **Schedule Performance Index (SPI) = EV / PV**
+  - Exemplo: R$ 350.000 / R$ 400.000 = 0.875
+  - Interpretação:
+    - SPI > 1.0: Adiantado no cronograma
+    - SPI = 1.0: No cronograma
+    - SPI < 1.0: Atrasado
+  - **Ação se SPI < 0.90**: Replanejar cronograma, adicionar recursos
+
+- [ ] **Cost Variance (CV) = EV - AC**
+  - Exemplo: R$ 350.000 - R$ 380.000 = -R$ 30.000
+  - Interpretação: Negativo = acima do orçamento
+
+- [ ] **Schedule Variance (SV) = EV - PV**
+  - Exemplo: R$ 350.000 - R$ 400.000 = -R$ 50.000
+  - Interpretação: Negativo = atrasado
+
+**Projeções Futuras**:
+- [ ] **Estimate at Completion (EAC) = BAC / CPI**
+  - BAC (Budget at Completion) = Orçamento total = R$ 1.000.000
+  - EAC = R$ 1.000.000 / 0.92 = R$ 1.086.957
+  - Interpretação: Projeção de custo final se tendências continuarem
+
+- [ ] **Estimate to Complete (ETC) = EAC - AC**
+  - ETC = R$ 1.086.957 - R$ 380.000 = R$ 706.957
+  - Interpretação: Quanto ainda precisa ser gasto
+
+- [ ] **Variance at Completion (VAC) = BAC - EAC**
+  - VAC = R$ 1.000.000 - R$ 1.086.957 = -R$ 86.957
+  - Interpretação: Estouro de orçamento projetado
+
+**Ações Corretivas Baseadas em Thresholds**:
+- [ ] Se CPI < 0.90 OU SPI < 0.90:
+  - [ ] Reunião de emergência com stakeholders
+  - [ ] Análise de causa raiz (5 Porquês, Ishikawa)
+  - [ ] Plano de ação corretiva documentado
+  - [ ] Renegociação de escopo/prazo/custo se necessário
+
+- [ ] Se 0.90 ≤ CPI < 0.95 OU 0.90 ≤ SPI < 0.95:
+  - [ ] Alerta amarelo para stakeholders
+  - [ ] Revisão de processos e eficiência
+  - [ ] Monitoramento semanal (em vez de mensal)
+
+- [ ] Se CPI ≥ 0.95 E SPI ≥ 0.95:
+  - [ ] Status verde
+  - [ ] Continuar monitoramento mensal
+
+**Comunicação de Resultados**:
+- [ ] Atualizar dashboard executivo com métricas EVM
+- [ ] Preparar sumário executivo de 1 página
+- [ ] Apresentar em status meeting mensal
+- [ ] Arquivar dados para trend analysis futuro
+
+### Checklist de Gestão de Impedimentos
+
+**Identificação de Impedimentos**:
+- [ ] Registrado por: [Nome do membro do time]
+- [ ] Data de identificação: [Data]
+- [ ] Descrição clara e específica do impedimento
+- [ ] Impacto no trabalho (qual tarefa está bloqueada?)
+- [ ] Urgência: ⬜ Baixa ⬜ Média ⬜ Alta ⬜ Crítica
+
+**Tipos Comuns de Impedimentos**:
+- [ ] **Técnico**: Bloqueio por bug, falta de ambiente, dependência de biblioteca
+- [ ] **Organizacional**: Aprovações pendentes, acesso a sistemas, recursos indisponíveis
+- [ ] **Conhecimento**: Falta de expertise, documentação inexistente, treinamento necessário
+- [ ] **Externo**: Dependência de terceiros, API externa instável, fornecedor atrasado
+
+**Plano de Ação**:
+- [ ] Responsável pela remoção: [Nome - geralmente Scrum Master]
+- [ ] Estratégia de resolução:
+  - [ ] **Remoção direta**: SM pode resolver autonomamente
+  - [ ] **Escalação**: Requer envolvimento de manager/sponsor
+  - [ ] **Workaround**: Solução temporária enquanto root cause é resolvida
+  - [ ] **Aceitar e documentar**: Impedimento fora de controle, registrar para lições aprendidas
+- [ ] Prazo esperado de resolução: [Data]
+- [ ] Dependências: [O que precisa acontecer antes?]
+
+**Acompanhamento**:
+- [ ] Status revisado em daily standup
+- [ ] Se não resolvido em 3 dias: escalar para management
+- [ ] Documentar ações tomadas e resultados
+- [ ] Quando resolvido: comunicar ao time e remover do board de impedimentos
+
+**Prevenção Futura**:
+- [ ] Impedimento era previsível? Se sim, por que não foi antecipado?
+- [ ] Ação preventiva para evitar recorrência:
+  - Exemplo: Se "falta de acesso ao ambiente de QA" recorreu 3x, criar processo padrão de onboarding
+- [ ] Documentar no playbook do time
+
+---
+
+## Apêndice C: Glossário de Termos Técnicos
+
+### Termos de Liderança e Gestão de Equipes
+
+**Liderança Situacional**: Teoria desenvolvida por Hersey-Blanchard que postula que líderes eficazes adaptam seu estilo (direcionar, orientar, apoiar, delegar) baseado no nível de maturidade e competência dos membros da equipe em relação a tarefas específicas.
+
+**Servant Leadership**: Filosofia de liderança onde o líder prioriza servir a equipe, removendo impedimentos e criando condições para que membros se auto-organizem e alcancem seu potencial máximo. Amplamente adotada em contextos ágeis (Scrum Master).
+
+**Teoria da Autodeterminação (SDT)**: Framework psicológico de Deci e Ryan que identifica três necessidades humanas fundamentais para motivação intrínseca: autonomia (controle sobre próprio trabalho), competência (sensação de eficácia) e relacionamento (conexão com outros).
+
+**Equipes de Alto Desempenho**: Times que demonstram características como confiança mútua, objetivos compartilhados, comunicação aberta, resolução colaborativa de conflitos e comprometimento com resultados coletivos. Conceito explorado por Patrick Lencioni em "The Five Dysfunctions of a Team".
+
+**Psychological Safety**: Ambiente onde membros se sentem seguros para assumir riscos interpessoais, admitir erros, fazer perguntas e propor ideias sem medo de humilhação ou retaliação. Pesquisado por Amy Edmondson como fator crítico para inovação e aprendizado.
+
+### Termos de Gestão de Stakeholders
+
+**Stakeholder**: Indivíduo, grupo ou organização que pode afetar, ser afetado ou perceber-se afetado por decisão, atividade ou resultado de projeto. Incluem patrocinadores, clientes, usuários, equipe, fornecedores, reguladores.
+
+**Matriz de Poder vs Interesse**: Ferramenta de análise que classifica stakeholders em quatro quadrantes baseado em duas dimensões (poder para influenciar projeto e nível de interesse no projeto), orientando estratégias de engajamento: Gerenciar de Perto, Manter Satisfeitos, Manter Informados, Monitorar.
+
+**Salience (Saliência)**: Grau de prioridade que stakeholder deve receber, determinado por três atributos conforme Mitchell, Agle e Wood: poder (capacidade de influenciar), legitimidade (adequação de sua reivindicação) e urgência (necessidade de atenção imediata). Stakeholders com os três atributos são "definitivos" e requerem máxima atenção.
+
+**Matriz RACI**: Ferramenta que define papéis e responsabilidades atribuindo uma de quatro categorias a cada stakeholder para cada atividade: Responsible (executa), Accountable (responsável final, aprova), Consulted (consultado, fornece input), Informed (informado sobre progresso/resultados).
+
+**Engagement Strategy (Estratégia de Engajamento)**: Plano documentado que define como projeto manterá stakeholders informados, engajados e satisfeitos, especificando frequência de comunicação, canais preferidos, tipo de informação e abordagem (formal/informal).
+
+### Termos de Comunicação
+
+**Plano de Comunicação**: Documento formal que define quem precisa de quais informações, quando, através de quais canais, em qual formato e quem é responsável por comunicar. Componente crítico do Plano de Gerenciamento de Comunicações do PMBOK.
+
+**Modelo de Shannon-Weaver**: Framework clássico de comunicação que identifica componentes essenciais: emissor (fonte), codificação (mensagem transformada em sinais), canal (meio), ruído (interferências), decodificação (interpretação), receptor (destinatário) e feedback (resposta).
+
+**Comunicação Síncrona**: Comunicação em tempo real onde emissor e receptor interagem simultaneamente (reuniões presenciais, videochamadas, telefonemas). Vantagem: feedback imediato. Desvantagem: requer disponibilidade simultânea.
+
+**Comunicação Assíncrona**: Comunicação onde emissor e receptor não precisam estar disponíveis simultaneamente (email, documentação, tickets, mensagens gravadas). Vantagem: flexibilidade de tempo. Desvantagem: feedback atrasado.
+
+**Barreiras de Comunicação**: Obstáculos que distorcem ou bloqueiam mensagens, incluindo: ambiguidade de linguagem técnica, sobrecarga de informação (info overload), diferenças culturais, ruído físico, falta de contexto compartilhado, emoções negativas, preconceitos cognitivos.
+
+### Termos de Monitoramento e Controle
+
+**Earned Value Management (EVM)**: Técnica quantitativa de medição de desempenho que integra escopo, cronograma e custos. Compara Planned Value (PV - trabalho planejado), Earned Value (EV - trabalho completado) e Actual Cost (AC - custo real) para calcular índices de performance.
+
+**Cost Performance Index (CPI)**: Razão entre Earned Value e Actual Cost (CPI = EV / AC). CPI > 1.0 indica que projeto está abaixo do orçamento (eficiente). CPI < 1.0 indica estouro de orçamento.
+
+**Schedule Performance Index (SPI)**: Razão entre Earned Value e Planned Value (SPI = EV / PV). SPI > 1.0 indica projeto adiantado. SPI < 1.0 indica atraso no cronograma.
+
+**Burndown Chart**: Gráfico usado em Scrum que mostra trabalho restante (story points ou horas) no eixo Y versus tempo (dias da sprint) no eixo X. Linha descendente indica progresso. Comparada com linha ideal para avaliar se sprint está no track.
+
+**Velocity**: Métrica ágil que mede quantidade média de story points completados por sprint. Usada para planejamento de capacidade em sprints futuras. Exemplo: time com velocity média de 35 pontos pode comprometer ~35 pontos em próxima sprint.
+
+**Cumulative Flow Diagram (CFD)**: Gráfico usado em Kanban que mostra quantidade de trabalho em cada estado do workflow ao longo do tempo. Áreas empilhadas permitem visualizar WIP, identificar gargalos e medir lead time/cycle time.
+
+**Work in Progress (WIP)**: Quantidade de trabalho atualmente em execução. Kanban recomenda limitar WIP para melhorar fluxo e reduzir lead time conforme Lei de Little (Lead Time = WIP / Throughput).
+
+**Lead Time**: Tempo total desde que um item entra no sistema até ser entregue ao cliente. Do ponto de vista do cliente, é tempo de resposta para solicitação.
+
+**Cycle Time**: Tempo que um item passa em trabalho ativo (excluindo tempo de espera). Métrica de eficiência do processo de desenvolvimento.
+
+### Termos de Controle de Mudanças
+
+**Change Control Board (CCB)**: Grupo formal responsável por revisar, avaliar, aprovar, rejeitar ou adiar solicitações de mudança. Típica composição: Gerente de Projeto, Product Owner, Arquiteto, representantes de stakeholders-chave.
+
+**Change Request (CR)**: Solicitação formal para modificar qualquer elemento do projeto (escopo, cronograma, custo, qualidade, recursos). Deve passar por processo estruturado de análise de impacto antes de aprovação.
+
+**Impact Analysis**: Avaliação sistemática de como mudança proposta afetará múltiplas dimensões do projeto: escopo, cronograma, custo, riscos, qualidade, recursos, stakeholders. Fundamenta decisão de aprovar/rejeitar mudança.
+
+**Configuration Management**: Prática de identificar, documentar, controlar e auditar configurações de produtos de trabalho (código, documentação, artefatos). Em desenvolvimento, implementada através de controle de versão (Git), gestão de branches, tags de release.
+
+**Rastreabilidade (Traceability)**: Capacidade de rastrear requisitos desde origem (stakeholder request) através de design, implementação, testes até entrega final. Matriz de Rastreabilidade documenta relacionamentos bidirecional entre requisitos e artefatos.
+
+### Termos de Métricas e KPIs
+
+**Key Performance Indicator (KPI)**: Métrica quantificável que avalia eficácia em atingir objetivos críticos do projeto/organização. KPIs devem ser SMART: Specific, Measurable, Achievable, Relevant, Time-bound.
+
+**DORA Metrics**: Quatro métricas-chave de DevOps Research and Assessment que caracterizam elite performers: Deployment Frequency (frequência de deploys), Lead Time for Changes (tempo de mudança em produção), Mean Time to Recovery (tempo de restauração), Change Failure Rate (taxa de falha).
+
+**Balanced Scorecard**: Framework estratégico de Kaplan e Norton que mede desempenho organizacional em quatro perspectivas: Financeira, Cliente, Processos Internos, Aprendizado e Crescimento. Adaptado para projetos para alinhar métricas técnicas com objetivos de negócio.
+
+**Vanity Metrics**: Métricas que parecem impressionantes superficialmente mas não fornecem insights acionáveis ou não correlacionam com sucesso real. Exemplo: linhas de código escritas (não mede qualidade), features lançadas (não mede valor entregue).
+
+**Actionable Metrics**: Métricas que informam decisões específicas e direcionam ações. Exemplo: taxa de conversão de usuários trial para pagos (informa otimizações de onboarding), cycle time (identifica gargalos no processo).
+
+**Technical Debt**: Custo futuro de trabalho adicional causado por escolher solução rápida/fácil agora em vez de abordagem melhor que levaria mais tempo. Medido em tempo de desenvolvimento ou através de ferramentas (SonarQube Tech Debt Ratio).
+
+**Code Coverage**: Porcentagem de código-fonte executada por testes automatizados. Meta típica: >80% para lógica de negócio crítica. Atenção: 100% coverage não garante ausência de bugs - qualidade de testes importa mais que quantidade.
+
+**Defect Density**: Número de defeitos encontrados dividido por tamanho do software (ex: defeitos por mil linhas de código ou por function point). Usado para comparar qualidade entre módulos ou projetos.
+
+**Net Promoter Score (NPS)**: Métrica de satisfação que pergunta "Qual probabilidade você recomendaria X?" (0-10). Promoters (9-10) - Passives (7-8) - Detractors (0-6). NPS = %Promoters - %Detractors. Varia de -100 (todos detratores) a +100 (todos promotores).
+
+### Siglas e Acrônimos
+
+**CCB**: Change Control Board (Comitê de Controle de Mudanças)
+**CFD**: Cumulative Flow Diagram (Diagrama de Fluxo Acumulado)
+**CPI**: Cost Performance Index (Índice de Desempenho de Custos)
+**CR**: Change Request (Solicitação de Mudança)
+**DoD**: Definition of Done (Definição de Pronto)
+**EAC**: Estimate at Completion (Estimativa no Término)
+**ETC**: Estimate to Complete (Estimativa para Completar)
+**EV**: Earned Value (Valor Agregado)
+**EVM**: Earned Value Management (Gerenciamento de Valor Agregado)
+**KPI**: Key Performance Indicator (Indicador-Chave de Desempenho)
+**MTTR**: Mean Time to Recovery (Tempo Médio de Recuperação)
+**NPS**: Net Promoter Score (Índice Net Promoter)
+**PV**: Planned Value (Valor Planejado)
+**RACI**: Responsible, Accountable, Consulted, Informed
+**ROI**: Return on Investment (Retorno sobre Investimento)
+**SDT**: Self-Determination Theory (Teoria da Autodeterminação)
+**SLA**: Service Level Agreement (Acordo de Nível de Serviço)
+**SPI**: Schedule Performance Index (Índice de Desempenho de Cronograma)
+**SV**: Schedule Variance (Variação de Cronograma)
+**UAT**: User Acceptance Testing (Testes de Aceitação de Usuário)
+**WIP**: Work in Progress (Trabalho em Progresso)
+
+---
+
+> **Nota**: Este glossário cobre termos fundamentais do Bloco D. Para definições adicionais relacionadas a metodologias ágeis, PMBOK e DevOps, consulte os glossários dos Blocos B e F respectivamente.
 

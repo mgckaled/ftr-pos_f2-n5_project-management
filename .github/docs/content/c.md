@@ -1,6 +1,6 @@
 <!-- markdownlint-disable -->
 
-# Bloco C - Iniciação e Planejamento de Projetos
+# Iniciação e Planejamento de Projetos
 
 ## 1. Resumo Executivo
 
